@@ -1,0 +1,149 @@
+@import "animate"
+
+$black: #000
+$white: #fff
+$grey: #BBBBBB
+
+html
+ font-size: 10px
+
+body
+ margin: 0
+ overflow-x: hidden
+ font-family: 'Padauk', sans-serif
+
+@keyframes logo
+ 0%
+  transform: translateY(-50px)
+ 70%
+  transform: translateY(-50px)
+ 80%
+  transform: translateY(5px)
+ 90%
+  transform: translateY(-3px)
+
+ 100%
+  transform: translateY(0px)
+
+@keyframes trembling
+ 0%
+  transform: translate(0px, 0px) rotate(0deg)
+ 3%
+  transform: translate(-1px, 0px) rotate(-3deg)
+ 5%
+  transform: translate(1px, 0px) rotate(7deg)
+ 8%
+  transform: translate(0px, 0px) rotate(0deg)
+ 100%  
+  transform: translate(0px, 0px) rotate(0deg)
+
+.ham 
+ cursor: pointer
+ tap-highlight-color: transparent
+ transition: transform 200ms
+ user-select: none
+ fill: none
+ width: 50px
+ margin-right: -20px
+ &:hover
+  .top 
+   stroke-dasharray: 40 82
+  .middle 
+   stroke-dasharray: 40 111
+  .bottom 
+   stroke-dasharray: 40 161  
+
+.activeMenu .hamRotate
+ transform: rotate(45deg)
+
+.line 
+ fill: none
+ transition: stroke-dasharray 400ms, stroke-dashoffset 400ms
+ stroke: $white
+ stroke-width: 3
+ border-radius: 5px
+ stroke-linecap: round
+
+.ham .top 
+ stroke-dasharray: 40 82
+ transform: translateY(7px)
+
+.ham .middle 
+ stroke-dasharray: 30 111
+
+.ham .bottom 
+ stroke-dasharray: 20 161
+ transform: translateY(-7px)
+
+.activeMenu .ham .top 
+ stroke-dasharray: 35 82
+ stroke-dashoffset: -62px
+ transform: translateY(0px)
+
+.activeMenu .ham .middle 
+ stroke-dashoffset: 23px
+ stroke-dasharray: 40 111
+
+.activeMenu .ham .bottom 
+ stroke-dashoffset: -83px
+ stroke-dasharray: 40 161
+ transform: translateY(0px)
+
+.logo-start
+ animation: logo 2s
+ img
+  display: block !important
+
+header
+ height: 100vh
+ background: url(../img/header.jpg) no-repeat 25% 30% / cover
+ position: relative
+ nav
+  display: flex
+  height: 100%
+ .search
+  color: $white
+  font-size: 1.6rem
+  height: 100%
+  padding-top: 2px
+  display: flex
+  justify-content: center
+  align-items: center
+  text-decoration: none
+  transition: color .2s ease-out
+  animation-duration: .3s
+  // margin-right: 5rem
+  i
+   animation-delay: .8s
+  &:hover
+   color: $grey
+ .science
+  text-transform: uppercase
+  font-family: 'Advent Pro', sans-serif
+  font-size: 2.4rem
+  color: $white
+  position: absolute
+  bottom: 20px
+  left: 20px
+  animation-delay: 1s
+ .navbar
+  height: 50px
+  width: 100vw
+  background-color: $black
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 0 20px
+  position: fixed
+  .logo
+   display: flex
+   align-items: center
+   height: 100%
+   width: 39px
+   &:hover
+    img
+     animation: trembling 3s infinite
+   img
+    height: 80%
+    margin-bottom: 5px
+    display: none
