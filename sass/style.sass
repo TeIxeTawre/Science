@@ -46,13 +46,6 @@ body
  user-select: none
  fill: none
  width: 50px
- &:hover
-  .top 
-   stroke-dasharray: 40 82
-  .middle 
-   stroke-dasharray: 40 111
-  .bottom 
-   stroke-dasharray: 40 161  
 
 .activeMenu .hamRotate
  transform: rotate(45deg)
@@ -98,34 +91,43 @@ body
 .header-owl
  height: 100vh
  .item
-  height: 100vh
+  height: calc(100vh - 5rem)
+  margin-top: 5rem 
 
-.active-phone
- .ham
-  margin-right: -20px
+.active-desk
+ nav
+  margin-right: 20px
 
 header
  height: 100vh
  position: relative
+ background-color: $black
  nav
   display: flex
   height: 100%
- .search
-  color: $white
-  font-size: 1.6rem
-  height: 100%
-  padding-top: 2px
-  display: flex
-  justify-content: center
-  align-items: center
-  text-decoration: none
-  transition: color .2s ease-out
-  animation-duration: .3s
-  opacity: 0
-  i
-   animation-delay: .8s
-  &:hover
-   color: $grey
+  .search
+   font-size: 1.6rem
+   i
+    animation-delay: .8s
+  .user
+   font-size: 1.8rem
+   i
+    animation-delay: .1s
+  a
+   margin-left: 50px
+   color: $white
+   font-size: 1.6rem
+   height: 100%
+   padding-top: 2px
+   display: flex
+   justify-content: center
+   align-items: center
+   text-decoration: none
+   transition: color .2s ease-out
+   animation-duration: .3s
+   opacity: 0
+   &:hover
+    color: $grey
  .science
   text-transform: uppercase
   font-family: 'Advent Pro', sans-serif
@@ -137,7 +139,7 @@ header
   animation-delay: 1s
   z-index: 100
  .navbar
-  height: 50px
+  height: 5rem
   width: 100vw
   background-color: $black
   display: flex
@@ -158,3 +160,20 @@ header
     height: 80%
     margin-bottom: 5px
     display: none
+
+
+@media (max-width: 768px)
+ body
+  header
+   .header-owl
+    .bright
+     background-position-x: 90% !important
+@media (max-width: 596px)
+ body
+  header
+   .header-owl
+    .bright
+     background-position-x: center !important
+     background-size: 30rem !important
+     background-position-y: top !important
+    
