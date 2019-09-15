@@ -4,6 +4,7 @@ jQuery(document).ready(function() {
 		nav: false,
 		loop: true
 	});
+
 	$('.logo').addClass('logo-start');
 	$('.science').addClass('fadeInLeft')
 	$('nav a i').addClass('fadeIn')
@@ -11,7 +12,21 @@ jQuery(document).ready(function() {
 		$('body').toggleClass('activeMenu');
 		$('.search').toggleClass('fadeOut');
 	});
-	if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
-	    $('body').toggleClass('active-desk');
-	}
+
+	$('.btn').hover(function() {
+		$(this).removeClass('animated');
+		$(this).addClass('pulse animated');
+	}, function() {
+		$(this).removeClass('pulse');
+	});
+
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))
+		$('body').addClass('active-phone');
+	$(window).resize(function() {
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+		    $('body').addClass('active-phone');
+		} else {
+			$('body').removeClass('active-phone');
+		}
+	});
 });

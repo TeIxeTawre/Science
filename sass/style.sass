@@ -9,8 +9,11 @@ $green: #91BB1A
 html
  font-size: 10px
 
-body
+body, p, h1, h2, h3, h4, h5, h6
  margin: 0
+ padding: 0
+
+body
  overflow-x: hidden
  font-family: 'Padauk', sans-serif
 
@@ -94,9 +97,9 @@ body
   height: calc(100vh - 5rem)
   margin-top: 5rem
 
-.active-desk
- nav
-  margin-right: 20px
+.active-phone
+ .ham
+  margin-right: -20px
 
 .btn
  background-color: $green
@@ -111,23 +114,30 @@ body
 
 .bright
  .window
-  width: 50%
+  width: 100%
   height: 100%
   display: flex
   flex-direction: column
   justify-content: space-between
+  &-pair
+   order: 1
   .header-btn
-   order: 3
+   order: 2
    margin-bottom: 100px
    padding: 1.2rem 5rem
    font-size: 2.4rem
+   animation-delay: 1.3s
    width: 25rem
   .inf 
    font-family: 'Advent Pro', sans-serif
    color: $white
-   order: 1
    font-size: 3.6rem
-   transform: translateY(-20px)
+   animation-delay: 1s
+   margin-top: 10px
+  .description
+   color: $white
+   font-size: 2rem
+   animation-delay: 1.2s
 
 header
  height: 100vh
@@ -136,6 +146,7 @@ header
  nav
   display: flex
   height: 100%
+  margin-right: 20px
   .search
    font-size: 1.6rem
    i
@@ -143,7 +154,7 @@ header
   .user
    font-size: 1.8rem
    i
-    animation-delay: .1s
+    animation-delay: 1s
   a
    margin-left: 50px
    color: $white
@@ -196,8 +207,8 @@ header
 @media (max-width: 768px)
  body
   header
-   .search
-    
+   nav
+    margin-right: 0
    .header-owl
     .bright
      background-position-x: 90% !important
@@ -206,8 +217,7 @@ header
   header
    nav
     a
-     margin-left: 30px
-     padding-top: 0
+     margin-left: 0
    .header-owl
     .bright
      background-position-x: center !important
@@ -220,6 +230,10 @@ header
       justify-content: flex-start
       height: 18rem
       width: 100%
+      &-pair
+       order: 2
+       .description
+        display: none
       .header-btn
        padding: 8px 39px
        width: auto
@@ -227,7 +241,7 @@ header
        font-size: 2.4rem
        font-weight: bold
        order: 1
+       animation-delay: 0s
       .inf
        font-size: 2.4rem 
-       order: 2
-       transform: translateY(0)
+       animation-delay: .4s
