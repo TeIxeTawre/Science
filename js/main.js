@@ -8,13 +8,16 @@ jQuery(document).ready(function() {
 	});
 
 	$('.logo').addClass('logo-start');
-	$('.science').addClass('fadeInLeft')
-	$('nav a i').addClass('fadeIn')
+	$('.science').addClass('fadeInLeft animated')
+	$('nav a i').addClass('fadeIn animated')
 	$('.ham').on('click', function(event) {
 		$('body').toggleClass('activeMenu');
-		$('.search').toggleClass('fadeOut');
+		$('.search').toggleClass('fadeOut animated');
 	});
-	$('.menu-a').addClass('fadeIn')
+	$('.menu-a').addClass('fadeIn animated')
+	$('.bright .window a').toggleClass('fadeIn animated');
+	$('.bright .window .window-pair p').toggleClass('fadeInDown animated');
+
 
 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))
 		$('body').addClass('active-phone');
