@@ -26,13 +26,42 @@
 			</a>
 			<!-- /.logo -->
 			<nav>
-				<a href="#" class="search animated fadeIn">
+				<a href="#" class="menu-a search animated">
 					<i class="fal fa-search animated"></i>
 				</a>
 				<!-- /.search -->
-				<a href="#" class="user fadeIn animated d-none d-md-flex">
-					<i class="fal fa-user animated"></i>
-				</a>
+				<div class="popap-block">
+					<a href="#" class="menu-a user animated d-none d-md-flex">
+						<i class="fal fa-user animated"></i>
+					</a>
+					<!-- /.user -->
+					<div class="popap-user">
+						<div class="signin-pair">
+							<form action="#" method="POST" class="signin-form">
+								<label for="username">Username</label>
+								<input type="username" id="username" required="" placeholder="Username">
+							
+								<label for="password">Password</label>
+								<input type="password" id="password" required="" placeholder="Password">
+							
+								<input type="submit" class="btn" value="Sign In">
+							</form>
+							<div class="signin-pair__down">
+								<a href="#" class="reg">
+									Creat new acount
+								</a>
+								<span></span>
+								<a href="#" class="forgot">
+									Forgot password
+								</a>
+							</div>
+							<!-- /.signin-pair__down -->
+						</div>
+						<!-- /.signin-pair -->
+					</div>
+					<!-- /.popap-user -->
+				</div>
+				<!-- /.popap-block -->
 			</nav>
 			<svg class="ham hamRotate d-md-none" viewBox="0 0 100 100" width="80">
 			  <path
@@ -66,9 +95,6 @@
 					<!-- /.window-pair -->
 				</div>
 				<!-- /.window -->
-			</div>
-			<!-- /.item -->
-			<div class="item" style="background: url(img/header-owl/science.jpg) no-repeat 30% 30% / cover;">
 			</div>
 			<!-- /.item -->
 		</div>
